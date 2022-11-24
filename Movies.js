@@ -4,7 +4,7 @@ import {movie} from './mockData';
 
 const createMovie = () => ({
     title: movie.Title,
-    rating: movie.Rating,
+    rated: movie.Rated,
     year: movie.Year,
     poster: movie.Poster,
     

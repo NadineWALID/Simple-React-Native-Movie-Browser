@@ -5,10 +5,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Home'
 import movies from './Movies'
+import Movies from './Movies';
 
 
 
 const Stack = createNativeStackNavigator();
+
+
 
 export default class App extends React.Component{
 
@@ -18,19 +21,16 @@ export default class App extends React.Component{
 
   render(){
     return (
-      <View>
-         <NavigationContainer>
-         <Stack.Navigator initialRouteName="Home" screenOptions={styles.Ncontainer}>
-         <Stack.Screen 
-         name="Home"
-         component={HomeScreen} />
-  
-   
-         </Stack.Navigator>
-       
-         </NavigationContainer>
+      
+      
+        <NavigationContainer>
+        <Stack.Navigator screenOptions={styles.Ncontainer}>
+        <Stack.Screen name='Home' component={HomeScreen} initialParams={{'movies':this.state.movies}}></Stack.Screen>
+        </Stack.Navigator>
+        
+        </NavigationContainer>
 
-      </View>
+    
       
     );
 
@@ -42,12 +42,7 @@ export default class App extends React.Component{
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  
   Ncontainer: {
       title: 'Movie Browser',
       headerStyle: {
@@ -56,6 +51,7 @@ const styles = StyleSheet.create({
       alignItems: 'left',
       flex: 1,
       headerTintColor: '#fff',
+      textAlign:'left',
       headerTitleStyle: {
         fontWeight: 'bold',
       },
