@@ -25,7 +25,7 @@ function replacer( value) {
 
 function HomeScreen({route,navigation,props}) {
   const  movies  = route.params.movies[0];
-  const imageUrl = "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg";
+  const imageUrl = route.params.movies[0].poster;
   
   return (
     <ScrollView style={styles.container}>
@@ -148,9 +148,7 @@ poster: {
     color:'#A9A9A9',
     width:150,
   },
-  headerSection:{
-    width:200,
-  }
+  
 
 
 })
