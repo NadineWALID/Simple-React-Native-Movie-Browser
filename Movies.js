@@ -7,6 +7,17 @@ const createMovie = () => ({
     rated: movie.Rated,
     year: movie.Year,
     poster: movie.Poster,
+    released: movie.Released,
+    runtime:movie.Runtime,
+    genre:movie.Genre,
+    director: movie.Director,
+    writer: movie.Writer,
+    actors: movie.Actors,
+    plot: movie.Plot,
+    language: movie.Language,
+    country: movie.Country,
+    awards: movie.Awards,
+    imdbRating: movie.imdbRating,
     
   })
 

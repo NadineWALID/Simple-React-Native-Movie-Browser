@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button,SectionList} from 'react-native';
+import { StyleSheet,ScrollView, Text, View,Button,SectionList,Image} from 'react-native';
 import Row from './MovieRow'
 import movies from './Movies'
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
@@ -25,16 +25,84 @@ function replacer( value) {
 
 function HomeScreen({route,navigation,props}) {
   const  movies  = route.params.movies[0];
+  const imageUrl = "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg";
   
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+
       
       <Text style={styles.title}> {replacer(JSON.stringify(movies.title))}</Text>
-      <Text style={styles.year}><Text style={styles.header}>Year:</Text>  {replacer(JSON.stringify(movies.year))}
-      <Text style={[styles.header,styles.paddingRightHeader]}>Rating:</Text>  {replacer(JSON.stringify(movies.rated))}</Text>
-      <Text> {JSON.stringify(movies.poster)}</Text>
-      
+      <Image
+          style={styles.poster}
+          source={{uri:imageUrl}}
+        />
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Year:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.year))}</Text>
     </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Rating:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.rated))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Released:</Text>       
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.released))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Run Time:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.runtime))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Genre:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.genre))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Director:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.director))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Actors:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.actors))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Plot:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.plot))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Language:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.language))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Country:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.country))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>Awards:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.awards))}</Text>
+    </View>
+
+    <View style={styles.centerCont}>
+       <Text style={styles.leftCont}>IMBD Rating:</Text>
+       <Text style={styles.rightCont}>{replacer(JSON.stringify(movies.imdbRating))}</Text>
+    </View>
+      
+    </ScrollView>
+      
+      
+      
+      
+      
+   
   );
 }
 
@@ -46,29 +114,44 @@ const styles = StyleSheet.create({
      backgroundColor:'#404040', 
     },
    title:{
-       fontSize:20,
+       fontSize:25,
        fontWeight:'bold',
        textAlign:'center',
        color:'white',
+       paddingBottom:10,
    },
-   year:{
-    flexDirection: 'row',
-    padding:10,
-    fontSize:15,
+ 
+poster: {
+    width: 300,
+    height: 500,
+  },
+  rowContainer:{
+    fontSize:20,
     textAlign:'center',
     color:'white',
+    width:300,
+
+  },
+  centerCont:{
+    paddingTop:20,
+    flexDirection: 'row'
+  },
+  rightCont:{
+    fontSize:17,
+    color:'white',
+    width:150,
     
-},
-header:{
-    
-    fontSize:15,
+  },
+  leftCont:{
+    fontSize:20,
     fontWeight:'bold',
     color:'#A9A9A9',
-    
-},
-paddingRightHeader:{
-    textAlign:'right',
-},
+    width:150,
+  },
+  headerSection:{
+    width:200,
+  }
+
 
 })
 
