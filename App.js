@@ -4,6 +4,7 @@ import { StyleSheet, Text, View,Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Home'
+import MovieInfo from './MovieInfo'
 import movies from './Movies'
 import Movies from './Movies';
 
@@ -26,6 +27,7 @@ export default class App extends React.Component{
         <NavigationContainer>
         <Stack.Navigator screenOptions={styles.Ncontainer}>
         <Stack.Screen name='Home' component={HomeScreen} initialParams={{'movies':this.state.movies}}></Stack.Screen>
+        <Stack.Screen name='MovieInfo' component={MovieInfo} initialParams={{'movies':this.state.movies}}></Stack.Screen>
         </Stack.Navigator>
         
         </NavigationContainer>
