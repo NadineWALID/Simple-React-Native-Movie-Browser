@@ -21,6 +21,19 @@ import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 
+  
+  const returnMovie = async () => {
+    const URL="https://www.omdbapi.com/?s=dresses&apikey=db87c2b4"
+    const resp = await fetch(URL);
+    const data = await resp.json();
+
+    console.log(data.Search);
+  };
+
+
+  
+  
+  
 
 export default class HomeScreen extends React.Component {
     state={
@@ -43,10 +56,13 @@ export default class HomeScreen extends React.Component {
         
       }
 
-      handleSubmit = () =>{
+      handleSubmit = async() =>{
      
-        //this.props.onSubmit({title: this.state.title})
-       
+        const URL="https://www.omdbapi.com/?s="+this.state.title+"&apikey=db87c2b4";
+        const resp = await fetch(URL);
+        const data = await resp.json();
+        console.log(data.Search);
+    
       } 
    
     render() {
