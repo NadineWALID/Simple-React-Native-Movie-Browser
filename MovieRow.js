@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image,ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import Constants from 'expo-constants';
 
 styles = StyleSheet.create({

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,ScrollView, Text, View,Button,SectionList,Image,TextInput,Pressable} from 'react-native';
+import { StyleSheet,ScrollView, Text, View,TextInput,Pressable} from 'react-native';
 import Row from './MovieRow'
 import movies from './Movies'
 import SearchList from './SearchList'
@@ -23,13 +23,13 @@ import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 
   
-  const returnMovie = async () => {
+  /*const returnMovie = async () => {
     const URL="https://www.omdbapi.com/?s=dresses&apikey=db87c2b4"
     const resp = await fetch(URL);
     const data = await resp.json();
 
-    console.log(data.Search);
-  };
+    
+  };*/
 
 
   

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,ScrollView, Text, View,Button,SectionList,Image} from 'react-native';
+import { StyleSheet,ScrollView, Text, View,Image} from 'react-native';
 import movies from './Movies'
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
