@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet,ScrollView, Text, View,Button,SectionList,Image,TextInput,Pressable} from 'react-native';
 import Row from './MovieRow'
 import movies from './Movies'
+import SearchList from './SearchList'
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 
@@ -39,10 +40,13 @@ export default class HomeScreen extends React.Component {
     state={
         title:'',
         isFormValid:false,
+        movies: movies,
+        showSearchResults: false,
       }
 
       handleTitleChange = title => {
         this.setState({title},this.validateForm)
+        this.setState({showSearchResults: false})
       }
 
       validateForm =()=>{
@@ -61,7 +65,14 @@ export default class HomeScreen extends React.Component {
         const URL="https://www.omdbapi.com/?s="+this.state.title+"&apikey=db87c2b4";
         const resp = await fetch(URL);
         const data = await resp.json();
-        console.log(data.Search);
+        console.log(data.Response);
+        if (data.Response == "True")
+        {
+          this.setState({showSearchResults: true})
+          this.setState({movies: data.Search})
+        }
+      
+
     
       } 
    
@@ -74,6 +85,19 @@ export default class HomeScreen extends React.Component {
           <Text style={styles.searchButtonText}> Search </Text>
           </Pressable>
           </View>
+          <ScrollView style={{paddingTop:20,}}>
+          { this.state.showSearchResults ? (
+          
+            <SearchList  movies={this.state.movies}/>
+          
+         
+          ):null
+        
+ 
+          }
+
+          </ScrollView>
+       
           
            
         </View>

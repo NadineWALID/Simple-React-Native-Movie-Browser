@@ -1,19 +1,40 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image,ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 
 styles = StyleSheet.create({
   row:{
-    padding: 20,
-  }
+    flexDirection: 'row',
+    paddingRight:15,
+    borderStyle:'solid',
+    borderColor:'black',
+    borderWidth:1,
+  },
+  poster: {
+    width: 75,
+    height: 110,
+  },
+  title:{
+    paddingTop:30,
+    fontSize:20,
+    textAlign:'center',
+    paddingRight:60,
+    paddingLeft:50,
+    color:'white',
+    paddingBottom:10,
+},
 })
+
+//const imageUrl = route.params.movies[0].poster;
 
 const Row = props =>(
     <View style={styles.row}>
-    <Text>{props.title}</Text>
-    <Text>{props.rated}</Text>
-    <Text>{props.released}</Text>
-    <Text>{props.poster}</Text>
+    <Image
+          style={styles.poster}
+          source={{uri:props.movie.Poster}}
+        />
+    <Text style={styles.title}>      {props.movie.Title}(<Text>{props.movie.Year}</Text>)</Text>
+    
     </View>
   )
   
