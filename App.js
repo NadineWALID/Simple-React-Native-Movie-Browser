@@ -6,7 +6,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Home'
 import MovieInfo from './MovieInfo'
 import movies from './Movies'
-import Movies from './Movies';
 
 
 

@@ -29,7 +29,6 @@ function MovieInfo({route,navigation,props}) {
   return (
     <ScrollView style={styles.container}>
 
-      
       <Text style={styles.title}> {replacer(JSON.stringify(movies.title))}</Text>
       <Image
           style={styles.poster}
