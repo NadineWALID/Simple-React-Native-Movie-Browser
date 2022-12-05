@@ -22,7 +22,7 @@ function replacer( value) {
   }
 
 
-function MovieInfo({route,navigation,props}) {
+function MovieInfo({route,navigation},props) {
   const  movies  = route.params.movies[0];
   const imageUrl = route.params.movies[0].poster;
   

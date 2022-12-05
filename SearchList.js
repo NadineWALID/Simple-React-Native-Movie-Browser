@@ -27,7 +27,9 @@ const SearchList = props =>{
     return (
       <View>
        <Row  movie={data}/>
-       <Button onPress={() => navigation.navigate('MovieInfo')} title="View Movie"/>
+       <Button onPress={() => navigation.navigate('MovieDetails',{
+          movie: {data},
+        })} title="View Movie"/>
       </View>
       
     )
