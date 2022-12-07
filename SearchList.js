@@ -19,24 +19,53 @@ const FindMovie = async(props) => {
   console.log(data.Response);
 };
 
-const SearchList = props =>{
- 
+
+export default class SearchList extends React.Component {
+  state={
+    movies:this.props.movies,
+    moviedetails:'',
+  }
+
+  handleClick = async(movieTitle) =>{
+    const URL="https://www.omdbapi.com/?t="+movieTitle+"&apikey=db87c2b4";
+    const resp = await fetch(URL);
+    const movieDetails = await resp.json();
+    if (movieDetails.Response == "True")
+        {
+          this.setState({moviedetails: movieDetails})
+        } 
+
+
+  } 
+
+  render(){
+    return(
+         <View>
+          {this.state.movies.map((data)=>(
+            
+              <View>
+                <Row  movie={data}/>
+                <Button title="heloo" onPress={() => this.handleClick(data.Title)}/>
+              </View>
+            
+          )
+            
+          )}
+         </View>
+    )
+  }
   
-  return props.movies.map((data) => {
+ /* return props.movies.map((data) => {
     const navigation = useNavigation(); 
     return (
       <View>
        <Row  movie={data}/>
-       <Button onPress={() => navigation.navigate('MovieDetails',{
-          movie: {data},
-        })} title="View Movie"/>
       </View>
       
     )
-  })
+  })*/
 
 }
 
 
 
-export default SearchList

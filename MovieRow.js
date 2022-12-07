@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, Pressable } from 'react-native';
 import Constants from 'expo-constants';
 
 styles = StyleSheet.create({
@@ -23,19 +23,36 @@ styles = StyleSheet.create({
     color:'white',
     paddingBottom:10,
 },
+ViewButton:{
+  width:400,
+  backgroundColor:'black',
+  height:30,
+  justifyContent:'center',
+  textAlign:'center',
+
+},
+ViewButtonText:{
+ color:'white',
+ textAlign:'center',
+}
+
 })
 
 //const imageUrl = route.params.movies[0].poster;
 
-const Row = props =>(
-    <View style={styles.row}>
-    <Image
+const Row = (props) =>(
+    
+      <View style={styles.row}>
+      <Image
           style={styles.poster}
           source={{uri:props.movie.Poster}}
         />
     <Text style={styles.title}>      {props.movie.Title}(<Text>{props.movie.Year}</Text>)</Text>
     
-    </View>
+
+      </View>
+    
+   
   )
   
   
