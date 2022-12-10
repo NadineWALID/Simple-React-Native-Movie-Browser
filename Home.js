@@ -88,7 +88,7 @@ export default class HomeScreen extends React.Component {
           <ScrollView style={{paddingTop:20,}}>
           { this.state.showSearchResults ? (
           
-            <SearchList  movies={this.state.movies}/>
+            <SearchList  movies={this.state.movies} navigation={this.props.navigation}/>
           
          
           ):null
