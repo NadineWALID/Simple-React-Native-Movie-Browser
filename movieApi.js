@@ -21,7 +21,15 @@ const createMovie = () => ({
     
   })
 
+ 
+  export const fetchMovie = async (movieTitle) => {
+    const URL="https://www.omdbapi.com/?t="+movieTitle+"&apikey=db87c2b4";
+    const resp = await fetch(URL);
+    const movieDetails = await resp.json();
+    return movieDetails
+  }
 
-  const addKeys = (val, key) => ({key,...val})
 
-  export default Array.from({length: 1},createMovie).map(addKeys)
+ // const addKeys = (val, key) => ({key,...val})
+
+  //export Array.from({length: 1},createMovie).map(addKeys)
