@@ -29,6 +29,13 @@ const createMovie = () => ({
     return movieDetails
   }
 
+  export const fetchSearchResult = async (search) => {
+    const URL="https://www.omdbapi.com/?s="+search+"&apikey=db87c2b4";
+    const resp = await fetch(URL);
+    const searchResult = await resp.json();
+    return searchResult
+  }
+
 
  // const addKeys = (val, key) => ({key,...val})
 

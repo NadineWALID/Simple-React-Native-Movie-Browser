@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {Text,View,Button} from 'react-native';
-import Constants from 'expo-constants';
+import {View,TouchableOpacity} from 'react-native';
 import Row from './MovieRow'
-import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -17,12 +15,11 @@ export default class SearchList extends React.Component {
          <View>
           {this.props.movies.map((data)=>(
             
-              <View>
+              <TouchableOpacity onPress={()=>{this.props.navigation.navigate('MovieDetails',{
+                title: data.Title ,
+                 })}}>
                 <Row  movie={data}/>
-                <Button title="heloo" onPress={()=>{this.props.navigation.navigate('MovieDetails',{
-                  line: data.Title ,
-                })}}/>
-              </View>
+              </TouchableOpacity>
             
           )
             
@@ -31,15 +28,7 @@ export default class SearchList extends React.Component {
     )
   }
   
- /* return props.movies.map((data) => {
-    const navigation = useNavigation(); 
-    return (
-      <View>
-       <Row  movie={data}/>
-      </View>
-      
-    )
-  })*/
+ 
 
 }
 
