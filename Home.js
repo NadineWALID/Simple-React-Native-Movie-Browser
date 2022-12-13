@@ -4,7 +4,7 @@ import { StyleSheet,ScrollView, Text, View,TextInput,Pressable,Alert} from 'reac
 import SearchList from './SearchList'
 import { fetchSearchResult } from './movieApi';
 
-
+ 
 
 
   

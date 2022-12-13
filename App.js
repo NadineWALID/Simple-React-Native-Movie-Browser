@@ -8,7 +8,7 @@ import MovieDetails from './MovieDetails';
 
 const Stack = createNativeStackNavigator();
 
-
+ 
 
 export default class App extends React.Component{
 

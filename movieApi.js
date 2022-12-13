@@ -1,8 +1,6 @@
-import * as React from 'react';
-import Constants from 'expo-constants';
-import {movie} from './mockData';
 
-const createMovie = () => ({
+
+/*const createMovie = () => ({
     title: movie.Title,
     rated: movie.Rated,
     year: movie.Year,
@@ -19,7 +17,7 @@ const createMovie = () => ({
     awards: movie.Awards,
     imdbRating: movie.imdbRating,
     
-  })
+  })*/
 
  
   export const fetchMovie = async (movieTitle) => {
@@ -36,7 +34,7 @@ const createMovie = () => ({
     return searchResult
   }
 
-
+ 
  // const addKeys = (val, key) => ({key,...val})
 
   //export Array.from({length: 1},createMovie).map(addKeys)

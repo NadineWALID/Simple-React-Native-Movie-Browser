@@ -6,7 +6,7 @@ import { fetchMovie } from './movieApi';
 
 
 
-
+ 
 
 export default class MovieDetails extends React.Component{
 
